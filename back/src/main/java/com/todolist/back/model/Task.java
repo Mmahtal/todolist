@@ -29,7 +29,7 @@ public class Task {
     @Column(name="deadline_date")
     private Date deadlineDate;
     @ManyToOne
-    @JoinColumn(name="user_id", referencedColumnName = "id")
+    @JoinColumn(name="user_id", referencedColumnName = "User.id")
     private User user;
 
     public enum Status {
