@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  todolist-backend:
+    image: monapp/todolist-backend
+    ports:
+      - "8081:8081"
+
+  todolist-frontend:
+    image: monapp/todolist-frontend
+    ports:
+      - "8083:80"
