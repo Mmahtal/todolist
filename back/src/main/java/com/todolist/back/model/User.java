@@ -1,8 +1,7 @@
 package com.todolist.back.model;
 
+import jakarta.persistence.*;
 import java.sql.Timestamp;
-import javax.persistence.*;
-
 
 @Entity
 @Table(name = "users")

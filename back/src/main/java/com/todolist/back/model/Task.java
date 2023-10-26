@@ -1,10 +1,10 @@
 package com.todolist.back.model;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 import com.todolist.back.model.User;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @Entity
