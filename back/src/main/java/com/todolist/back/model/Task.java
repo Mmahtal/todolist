@@ -1,10 +1,10 @@
 package com.todolist.back.model;
 
 import jakarta.persistence.*;
+
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 import com.todolist.back.model.User;
-
 import java.util.Date;
 
 @Entity
@@ -15,6 +15,9 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private String title;
     private String description;
@@ -28,9 +31,6 @@ public class Task {
 
     @Column(name="deadline_date")
     private Date deadlineDate;
-    @ManyToOne
-    @JoinColumn(name="user_id", referencedColumnName = "User.id")
-    private User user;
 
     public enum Status {
         Done, Todo, InProgress

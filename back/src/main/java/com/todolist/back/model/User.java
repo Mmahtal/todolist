@@ -2,6 +2,7 @@ package com.todolist.back.model;
 
 import jakarta.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -46,6 +47,8 @@ public class User {
     }
 
     // Getters et Setters...
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Task> tasks;
 
     public int getId() {
         return id;
