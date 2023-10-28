@@ -25,6 +25,12 @@ public class TaskController {
     }
 
     @PostMapping("/addTask")
+    public Task addTask(@RequestBody Task task) {
+        return taskRepository.save(task);
+    }
+
+    /*
+    @PostMapping("/addTask")
     public String addNewTask(
             @RequestParam Integer userId,
             @RequestParam String title,
@@ -51,4 +57,5 @@ public class TaskController {
 
         return "Tâche ajoutée avec succès";
     }
+     */
 }

@@ -13,6 +13,9 @@ public class User {
     @Column(name = "id")
     private int id;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    private List<Task> tasks;
+
     @Column(name = "first_name")
     private String firstName;
 
@@ -47,8 +50,6 @@ public class User {
     }
 
     // Getters et Setters...
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Task> tasks;
 
     public int getId() {
         return id;
